@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Gerenciador de Tarefas</h1>
+        </header>
+        <main>
+
+
+            <div class="task-area-container" id="taskAreaContainer">
+                <div class="task-area" data-area="Pessoal">
+                </div>
+                <div class="task-area" data-area="Profissional">
+                </div>
+                <div class="task-area" data-area="Acadêmica">
+                </div>
+            </div>
+
+
+            <button id="createTaskBtn">Criar Tarefa</button>
+
+
+        </main>
+        <footer>
+            <div class="legend-status">
+                <h3>Status</h3>
+                Ativa
+                <del>Encerrada</del>
+            </div>
+            <div class="legend-vencimento">
+                <h3>Vencimento</h3>
+                <span class="vencimento-indicator vencido"></span> Venceu
+            </div>
+            <div class="legend-prioridade">
+                <h3>Prioridade</h3>
+                <span class="prioridade-indicator baixa"></span> Baixa
+                <span class="prioridade-indicator media"></span> Média
+                <span class="prioridade-indicator alta"></span> Alta
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">X</span>
+            <h2 id="taskModalTitle">Criar Tarefa</h2>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+                <label for="taskTitle">Nome da Tarefa:</label>
+                <input type="text" id="taskTitle" placeholder="Nome tarefa" required>
+                <label for="taskDueDate">Término:</label>
+                <input type="date" id="taskDueDate" required>
+                <label for="taskArea">Área:</label>
+                <select id="taskArea">
+                    <option value="Profissional">Profissional</option>
+                    <option value="Pessoal">Pessoal</option>
+                    <option value="Acadêmica">Acadêmica</option>
+                </select>
+                <label for="taskPriority">Prioridade:</label>
+                <select id="taskPriority">
+                    <option value="baixa">Baixo</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alto</option>
+                </select>
+                <label for="taskDescription">Descrição:</label>
+                <textarea id="taskDescription" placeholder="Descrição da tarefa"></textarea> 
+                <button type="submit">Salvar Tarefa</button>
+                <!-- Inside the modal HTML structure -->
+                <button id="markAsEncerradaBtn" style="display: none;">Encerrar Tarefa</button>
+
+            </form>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

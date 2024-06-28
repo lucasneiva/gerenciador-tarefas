@@ -1,0 +1,320 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F8F4F4;
+    /* Softer, off-white background */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #2962FF;
+    /* Vivid Blue */
+    color: white;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.task-area-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.task-area {
+    background-color: white;
+    /* White background for task areas */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-area h2 {
+    color: rgb(19, 19, 19);
+    /* Blue for section titles */
+    margin-bottom: 15px;
+}
+
+.task-card {
+    background-color: #f9f9f9;
+    /* Very light grey card background */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.task-card h3 {
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.task-card p {
+    margin-bottom: 15px;
+}
+
+.task-card button {
+    background-color: #2962FF;
+    /* Bright Green */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.task-card button:hover {
+    background-color: #00C853;
+    /* Darker Green on hover */
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.priority-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.priority-indicator.baixo {
+    background-color: #00E676;
+    /* Bright Green */
+}
+
+.priority-indicator.alto {
+    background-color: #FF1744;
+    /* Bright Green */
+}
+
+.status-indicator.active {
+    background-color: #00E676;
+    /* Bright Green */
+}
+
+.status-indicator.inactive {
+    background-color: #FF1744;
+    /* Red */
+}
+
+#createTaskBtn {
+    display: block;
+    width: auto;
+    margin: 20px auto;
+    padding: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 1.1em;
+    background-color: #2962FF;
+    /* Blue */
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #2962FF;
+    /* Blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Legends Styling */
+.legend-status {
+    margin-bottom: 20px;
+    /* Increased spacing between legend sections */
+}
+
+.legend-vencimento {
+    margin-bottom: 20px;
+    /* Increased spacing */
+}
+
+.vencimento-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    background-color: #FFC107;
+    /* Example yellow color */
+}
+
+.vencimento-indicator.vencido {
+    /* Style for overdue status */
+    background-color: #F44336;
+    /* Example red color */
+}
+
+.prioridade-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    /* Circle shape */
+    margin-right: 5px;
+}
+
+.prioridade-indicator.baixa {
+    background-color: #4CAF50;
+    /* Example green for low priority */
+}
+
+.prioridade-indicator.media {
+    background-color: #FFC107;
+    /* Example yellow for medium priority */
+}
+
+.prioridade-indicator.alta {
+    background-color: #F44336;
+    /* Example red for high priority */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    /* Sit on top of other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    /* Center in viewport */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+    width: 60%;
+    /* Adjust width as needed */
+    max-width: 500px;
+    /* Prevent modal from getting too wide */
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style form elements within the modal */
+#taskForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#taskForm input[type="text"],
+#taskForm input[type="date"],
+#taskForm select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ... your existing styles ... */
+
+#markAsEncerradaBtn {
+    background-color: #FF1744; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px; /* Add some space from the form */
+}
+
+#markAsEncerradaBtn:hover {
+    background-color: #d32f2f; /* Darker red */
+}
+
+#taskForm button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2962FF;
+    /* Example button color */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth transition on hover */
+}
+
+#taskForm button[type="submit"]:hover {
+    background-color: #0041C2;
+    /* Darker color on hover */
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .task-area-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #createTaskBtn {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .task-area-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Add styles for textarea */
+#taskDescription {
+    resize: vertical; /* Allow vertical resizing */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 80px; /* Minimum height */
+}
