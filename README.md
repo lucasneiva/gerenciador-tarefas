@@ -9,7 +9,7 @@ Este projeto implementa um gerenciador de tarefas básico utilizando HTML, CSS e
 - **Marcar como Concluída:** Tarefas concluídas podem ser marcadas, ocultando-as da lista principal (ainda não implementado) ✅.
 - **Editar Tarefas:** Permite a modificação dos detalhes de uma tarefa existente (ainda não implementado) ✏️.
 - **Filtrar Tarefas:** Visualize tarefas por área, prioridade ou status (ainda não implementado) 🔍.
-- **Armazenamento Local:** Os dados das tarefas são salvos no navegador utilizando `localStorage`, persistindo mesmo após o fechamento da página (ainda não implementado) 💾.
+- **Armazenamento Local:** Os dados das tarefas são salvos no navegador utilizando `localStorage`, persistindo mesmo após o fechamento da página 💾.
 
 ### Demonstração
 
