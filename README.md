@@ -6,9 +6,8 @@ Este projeto implementa um gerenciador de tarefas básico utilizando HTML, CSS e
 
 - **Criar Tarefas:** Defina o nome, data limite, área (profissional, pessoal ou acadêmica), prioridade (alta, média ou baixa) e descrição para cada tarefa 📝.
 - **Visualizar Tarefas:** Tarefas são organizadas por área em colunas distintas 👀.
-- **Marcar como Concluída:** Tarefas concluídas podem ser marcadas, ocultando-as da lista principal (ainda não implementado) ✅.
-- **Editar Tarefas:** Permite a modificação dos detalhes de uma tarefa existente (ainda não implementado) ✏️.
-- **Filtrar Tarefas:** Visualize tarefas por área, prioridade ou status (ainda não implementado) 🔍.
+- **Marcar como Concluída:** Tarefas concluídas podem ser marcadas. ✅.
+- **Editar Tarefas:** Permite a modificação dos detalhes de uma tarefa existente ✏️.
 - **Armazenamento Local:** Os dados das tarefas são salvos no navegador utilizando `localStorage`, persistindo mesmo após o fechamento da página 💾.
 
 ### Demonstração
